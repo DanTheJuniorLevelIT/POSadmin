@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="col-sm-7">
+            <app-main
+            (newItemEvent)="getProd($event)"
+            [product]="record"
+            ></app-main>
+        </div>
+        <div class="col-sm-5">
+            <app-editproduct
+            [product]="prodt"
+            (newUpdateEvent)="getRecord($event)"
+            ></app-editproduct>
+        </div>
+      </div>
+</div>

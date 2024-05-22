@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <header>New Customer</header>
+
+      <form [formGroup]="customerForm" id="form" class="topBefore" (ngSubmit)="save()">
+            <input style="color: black;" formControlName="lname" id="code" name="date" type="text" placeholder="Lastname" >
+            <input style="color: black;" formControlName="fname" id="prodname" name="author" type="text" placeholder="Firstname">
+            <input style="color: black;" formControlName="mname" id="brand" name="media" type="text" placeholder="Middle Name">
+            <input style="color: black;" formControlName="bdate" id="size" name="title" type="date" placeholder="Birthdate">
+            <input style="color: black;" formControlName="contact" id="price" name="title" type="text" placeholder="Contact">
+            <input style="color: black;" formControlName="address" id="price" name="title" type="text" placeholder="Address">
+            <input style="color: black;" formControlName="email" id="code" name="date" type="text" placeholder="Email" >
+            <input style="color: black;" formControlName="pass" id="code" name="date" type="password" placeholder="Password" >
+            <!-- <input style="color: black;" formControlName="credit" id="price" name="title" type="number" min="500" max="1000" placeholder="Credit Min: 500, Max: 1000"> -->
+            <input style="color: black;" formControlName="credit" id="price" name="title" type="number" min="500" max="1000" placeholder="Credit Min: 500, Max: 1000">
+            @if(showDiv){
+                  <div class="error-message">
+                        Credit should be between 500 and 1000.
+                  </div>
+                }
+            <input style="color: black;" id="submit" type="submit" value="Add Customer!">
+            <!-- <button type="submit">Submit</button> -->
+      </form>
+</div>

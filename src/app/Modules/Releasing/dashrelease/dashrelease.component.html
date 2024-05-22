@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <header>Add Release Product</header>
+    <div class="row">
+        <div class="col-sm-7">
+            <!-- <input class="text-black" id="search" type="text" placeholder="Search..." [(ngModel)]="keyword"> -->
+            <!-- <app-main
+            (newItemEvent)="getProd($event)"
+            [product]="record"
+            ></app-main> -->
+            <app-tablerelease
+            (newItemEvent)="getRelease($event)"
+            [product]="record"
+            ></app-tablerelease>
+        </div>
+        <div class="col-sm-5">
+            <!-- <app-editproduct
+            [product]="prodt"
+            (newUpdateEvent)="getRecord($event)"
+            ></app-editproduct> -->
+            <app-addproductrelease
+            [release]="relItem"
+            (newUpdateEvent)="getRecord($event)"
+            ></app-addproductrelease>
+        </div>
+      </div>
+</div>

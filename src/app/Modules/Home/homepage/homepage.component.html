@@ -1,0 +1,80 @@
+<!-- <p>homepage works!</p> -->
+<div class="wrapper">
+    <h3>Daily Sales Report</h3>
+    <!-- <h3 style="align-items: end;">{{ date | date: 'mediumDate' }}</h3> -->
+    <!-- <div class="table-container">
+      <div class="table">
+        <div class="row header green">
+          <div class="cell">
+            Date/Time
+          </div>
+          <div class="cell">
+            Product
+          </div>
+          <div class="cell">
+            Unit Price
+          </div>
+          <div class="cell">
+            Quantity
+          </div>
+          <div class="cell">
+            Transaction
+          </div>
+          <div class="cell">
+            Total
+          </div>
+        </div>
+        @for (s of sales; track s) {
+          <div class="row">
+            <div class="cell" data-title="Product">
+              {{s.Date}}
+            </div>
+            <div class="cell" data-title="Product">
+              {{s.Prod_name}}
+            </div>
+            <div class="cell" data-title="Unit Price">
+              {{s.Price}}
+            </div>
+            <div class="cell" data-title="Quantity">
+              {{s.quantity}}
+            </div>
+            <div class="cell" data-title="Date Sold">
+              {{s.Lastname}}
+            </div>
+            <div class="cell" data-title="Date Sold">
+              {{s.prodtotal}}
+            </div>
+          </div>
+        }@empty {
+          <h5>No Records Found</h5>
+        }
+      </div>
+    </div> -->
+    <div class="table-container">
+      <table class="table" style="">
+        <thead class="sticky-header"> 
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col" style="text-align: center;">Total Transaction</th>
+                <th scope="col">Sales</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (s of sales; track s) {
+                <tr>
+                    <td>{{s.Day}}</td>
+                    <td style="text-align: center;">{{s.TransactionCount}}</td>
+                    <td>{{s.DailyTotal}}</td>
+                    <td><i style="cursor: pointer;" (click)="print(s.Day)" class="fa fa-print" aria-hidden="true"></i></td>
+                </tr>
+            }@empty {
+                <h5>No Records Found</h5>
+            }
+        </tbody>
+    </table>
+  </div>
+      <h6>Total Sales: {{total}}</h6>
+      
+    </div>
+  

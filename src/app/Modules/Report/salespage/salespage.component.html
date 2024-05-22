@@ -1,0 +1,68 @@
+<div class="wrapper">
+    <div class="card mt-5">
+        <div class="card-header">
+            Sales Report
+        </div>
+        <div class="card-body">
+            <div class="table-container">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Month</th>
+                          <th style="text-align: center;">Total Transaction</th>
+                          <th style="text-align: center;">Sales</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @for(sr of salesreport; track sr){
+                        <tr>
+                          <td>{{sr.MonthYear}}</td>
+                          <td style="text-align: center;">{{sr.MonthlyTransactionCount}}</td>
+                          <td style="text-align: center;">{{sr.MonthlySales}}</td>
+                        </tr>
+                      }@empty {
+                        <tr>
+                          <td>No Data</td>
+                          <td>No Data</td>
+                          <td>No Data</td>
+                        </tr>
+                      }
+                  </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+    <div class="card mt-5">
+        <div class="card-header">
+            Return/Replaced Product
+        </div>
+        <div class="card-body">
+           <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Return</th>
+                            <th>Replacement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(r of retrep; track r){
+                        <tr>
+                            <td>{{r.retDate}}</td>
+                            <td>{{r.ReturnProductName}}</td>
+                            <td>{{r.ReplacementProductName}}</td>
+                        </tr>
+                        }@empty {
+                        <tr>
+                            <td>No Data</td>
+                            <td>No Data</td>
+                            <td>No Data</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+           </div>
+        </div>
+    </div>
+</div>

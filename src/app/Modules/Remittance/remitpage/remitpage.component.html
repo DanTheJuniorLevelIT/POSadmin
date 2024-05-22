@@ -1,0 +1,34 @@
+<!-- <p>homepage works!</p> -->
+<div class="wrapper">
+    <!-- <h5 [routerLink]="['/main/Product/productpage/newprod']" style="cursor: pointer;">
+      Add Product<i style="padding-left: 5px;" class="fa fa-plus" aria-hidden="true"></i>
+    </h5> -->
+    <div class="table-container">
+    <a [routerLink]="['/main/Remittance/remit/addremit']">
+        <h5>Add Remittance <i class="fa fa-plus-square-o" aria-hidden="true"></i></h5>
+    </a>
+    <table class="table">
+        <thead class="sticky-header"> 
+            <tr>
+                <th scope="col">Official Receipt #</th>
+                <th scope="col">Date</th>
+                <th scope="col">Amount</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (r of remit; track r) {
+                <tr>
+                    <td>{{r.OrNumber}}</td>
+                    <td>{{r.Date}}</td>
+                    <td>{{r.Amount}}</td>
+                    <td style="cursor: pointer;"><i class="fa fa-edit fa-lg" aria-hidden="true" (click)="editRemit(r.RemittanceID)"></i></td>
+                </tr>
+            }@empty {
+                <h5>No Records Found</h5>
+            }
+        </tbody>
+    </table>
+</div>
+    
+</div>

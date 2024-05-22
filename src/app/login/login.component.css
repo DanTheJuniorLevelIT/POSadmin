@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+.card{
+    background: #40679E;  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    height: 100%; 
+}
+h2{
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 3px #72A0C1;
+}
+label{
+    font-family: "Poppins", sans-serif;
+    
+}
+p{
+    font-family: "Poppins", sans-serif;
+}
+button {
+    margin: 10px;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+/* 15 */
+.btn-15 {
+background: #40679E;
+border: none;
+z-index: 1;
+}
+.btn-15:after {
+position: absolute;
+content: "";
+width: 0;
+height: 100%;
+top: 0;
+right: 0;
+z-index: -1;
+background-color: #72A0C1;
+border-radius: 5px;
+box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+7px 7px 20px 0px rgba(0,0,0,.1),
+4px 4px 5px 0px rgba(0,0,0,.1);
+transition: all 0.3s ease;
+}
+.btn-15:hover {
+color: #fff;
+}
+.btn-15:hover:after {
+left: 0;
+width: 100%;
+}
+.btn-15:active {
+top: 2px;
+}

@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <div class="card" id="print-content">
+        <div class="card-header text-center">
+            <h3>Northern Luzon Adventist Hospital Cafeteria Sales</h3>
+        </div>
+        <div class="card-body">
+                <h3>
+                    Transaction Details | {{dateselected}} 
+                    <span style="float: right; cursor: pointer;" (click)="printCard()">
+                        <i class="fa fa-print"></i>
+                    </span>
+                </h3>
+                <div class="table-container">
+                    <table class="table" style="">
+                        <thead class="sticky-header">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Product</th>
+                                <th scope="col" style="text-align: center;">Price</th>
+                                <th scope="col" style="text-align: center;">Quantity</th>
+                                <th scope="col" style="text-align: center;">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (td of transactionDetails; track td) {
+                            <tr>
+                                <td>{{td.Lastname}}, {{td.Firstname}}</td>
+                                <td>{{td.Prod_name}}</td>
+                                <td style="text-align: center;">{{td.Price}}</td>
+                                <td style="text-align: center;">{{td.quantity}}</td>
+                                <td style="text-align: center;">{{td.prodtotal}}</td>
+                            </tr>
+                            }@empty {
+                            <h5>No Records Found</h5>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    

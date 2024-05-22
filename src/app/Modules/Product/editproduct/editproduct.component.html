@@ -1,0 +1,26 @@
+
+<!-- <div class="wrapper"> -->
+    <header>Add / Edit Product</header>
+
+      <form [formGroup]="editproductform" id="form" class="topBefore" (ngSubmit)="update()">
+            <input style="color: black;" class="text-uppercase" formControlName="code" id="code" name="date" type="text" placeholder="Barcode" hidden>
+            <input style="color: black;" class="text-uppercase" formControlName="code2" id="code" name="date" type="text" placeholder="Barcode">
+            <select style="color: black;" formControlName="category" id="category" name="type" class="input">
+                <option value="" [selected]="true">Select Type</option>
+                <option value="1">Goods</option>
+                <option value="2">Drinks</option>
+                <option value="3">Foods</option>
+                <option value="4">Milktea</option>
+                <option value="5">Water Refill</option>
+                <option value="6">Others</option>
+            </select>
+            <input style="color: black;" formControlName="prodname" id="prodname" name="author" type="text" placeholder="Product Name">
+            <input style="color: black;" formControlName="brand" id="brand" name="media" type="text" placeholder="Brand">
+            <input style="color: black;" formControlName="size" id="size" name="title" type="text" placeholder="Size">
+            <input style="color: black;" formControlName="price" id="price" name="title" type="text" placeholder="Price">
+            <textarea style="color: black;" formControlName="desc" id="desc" name="message" type="text" placeholder="Description"></textarea>
+            <input style="color: black;" id="submit" type="submit" value="Add / Edit Product!">
+            <input style="color: black; text-align: center;" id="submit" (click)="clear()" value="CLEAR">
+            <!-- <button type="submit">Clear</button> -->
+      </form>
+<!-- </div> -->

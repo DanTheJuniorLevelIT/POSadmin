@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <header>Update Customer</header>
+
+      <form [formGroup]="customerForm" id="form" class="topBefore" (ngSubmit)="update()">
+            <input style="color: black;" formControlName="custid" id="code" name="date" type="text" placeholder="Lastname" hidden>
+            <input style="color: black;" formControlName="lname" id="code" name="date" type="text" placeholder="Lastname" >
+            <input style="color: black;" formControlName="fname" id="prodname" name="author" type="text" placeholder="Firstname">
+            <input style="color: black;" formControlName="mname" id="brand" name="media" type="text" placeholder="Middle Name">
+            <input style="color: black;" formControlName="bdate" id="size" name="title" type="date" placeholder="Birthdate">
+            <input style="color: black;" formControlName="contact" id="price" name="title" type="text" placeholder="Contact">
+            <input style="color: black;" formControlName="address" id="price" name="title" type="text" placeholder="Address">
+            <input style="color: black;" formControlName="credit" id="price" name="title" type="number" min="500" max="1000" placeholder="Credit Min: 500, Max: 1000">
+            <input style="color: black;" id="submit" type="submit" value="Update!">
+            <!-- <button type="submit">Submit</button> -->
+      </form>
+</div>

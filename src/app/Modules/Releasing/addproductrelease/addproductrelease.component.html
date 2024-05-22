@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <form [formGroup]="addrelease" id="form" class="topBefore" (ngSubmit)="addToRelease()">
+        <input style="color: black;" formControlName="code" id="prodname" name="author" type="text" placeholder="Barcode" hidden>
+        <input style="color: black;" formControlName="prodname" id="prodname" name="author" type="text" placeholder="Product Name" readonly>
+        <textarea style="color: black;" formControlName="desc" id="desc" name="message" type="text" placeholder="Description" readonly></textarea>
+        <input style="color: black;" formControlName="quantity" id="prodname" name="author" type="number" placeholder="Quantity">
+        <input class="text-black" id="submit" type="submit" value="Release Product!">
+    </form>
+  </div>
+  

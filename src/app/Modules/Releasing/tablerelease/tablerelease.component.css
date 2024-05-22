@@ -1,0 +1,24 @@
+.wrapper {
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 800px;
+  }
+
+  .sticky-header th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+  }
+
+  .table-container {
+    overflow-y: scroll;
+    height: 295px; /* adjust the height to your preference */
+  }
+  
+  .table {
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    display: table;
+  }

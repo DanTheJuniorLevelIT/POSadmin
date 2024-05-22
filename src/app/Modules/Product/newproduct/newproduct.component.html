@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <header>New Product</header>
+
+      <form [formGroup]="productform" id="form" class="topBefore" (ngSubmit)="save()">
+            <input style="color: black;" class="text-uppercase" formControlName="code" id="code" name="date" type="text" placeholder="Barcode">
+            <select style="color: black;" formControlName="category" id="category" name="type" class="input">
+                <option value="" [selected]="true">Select Type</option>
+                <option value="1">Goods</option>
+                <option value="2">Drinks</option>
+                <option value="3">Foods</option>
+                <option value="4">Milktea</option>
+                <option value="5">Water Refill</option>
+                <option value="6">Others</option>
+            </select>
+            <input style="color: black;" formControlName="prodname" id="prodname" name="author" type="text" placeholder="Product Name">
+            <input style="color: black;" formControlName="brand" id="brand" name="media" type="text" placeholder="Brand">
+            <input style="color: black;" formControlName="size" id="size" name="title" type="text" placeholder="Size">
+            <input style="color: black;" formControlName="price" id="price" name="title" type="text" placeholder="Price">
+            <textarea style="color: black;" formControlName="desc" id="desc" name="message" type="text" placeholder="Description"></textarea>
+            <input style="color: black;" id="submit" type="submit" value="Add Product!">
+            <!-- <button type="submit">Submit</button> -->
+      </form>
+</div>

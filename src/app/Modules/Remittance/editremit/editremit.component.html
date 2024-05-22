@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="card">
+      <form [formGroup]="remitForm" (ngSubmit)="update()" id="contact">
+        <h3>Edit Remittance</h3>
+        <!-- <h4>Change or Update All you want!</h4> -->
+          <fieldset>
+            <input type="number" tabindex="1" formControlName="remitID" hidden>
+            <input placeholder="Or Number" type="text" tabindex="2" formControlName="ornumber" required autofocus>
+          </fieldset>
+          <!-- <fieldset>
+            <input placeholder="Your Email Address" type="email" tabindex="2" required>
+          </fieldset> -->
+          <fieldset>
+            <input placeholder="Date" type="date" tabindex="3" formControlName="date" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Amount" type="text" tabindex="4" formControlName="amount" required>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+      </form>
+    </div>
+</div>

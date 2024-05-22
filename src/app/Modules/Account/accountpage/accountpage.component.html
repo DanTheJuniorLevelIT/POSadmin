@@ -1,0 +1,49 @@
+<!-- <div class="wrapper">
+    <div class="center-card">
+        <div class="card">
+          <ng-container *ngIf="userDetails"> 
+            <h2>Account Details</h2>
+            <p>User ID: {{ userDetails.UserID }}</p>
+            <p (click)="upName(userDetails.Lastname)">Name: {{ userDetails.Lastname }}, {{ userDetails.Firstname }}</p>
+            <p>Role: {{ userDetails.Role }}</p>
+            <p (click)="upName(userDetails.Contact)">Contact: {{ userDetails.Contact }}</p>
+      
+            <form action="" [formGroup]="acc">
+                <input type="text" formControlName="Name" value="{{ userDetails.Lastname }}">
+            </form>
+          </ng-container>
+      
+          <ng-container *ngIf="!userDetails">
+            <p>You are not logged in.</p> 
+          </ng-container>
+        </div>
+      </div>
+</div>
+   -->
+
+   <div class="wrapper">
+    <div class="profile-card">
+        
+
+        <div class="profile-info" *ngIf="userDetails">
+            <div class="profile-picture">
+                <img [src]="userDetails.img || '/assets/default.jpg'" alt="Profile Picture"> 
+            </div>
+            <h2>Account Details</h2>
+            <ul>
+                <!-- <li style="text-align: left;"><i class="fa fa-id-card"></i> User ID: {{ userDetails.UserID }}</li> -->
+                <li style="text-align: left;"><i class="fa fa-user"></i> Name: {{ userDetails.Lastname }}, {{ userDetails.Firstname }}</li>
+                <li style="text-align: left;"><i class="fa fa-briefcase"></i> Role: {{ userDetails.Role }}</li>
+                <li style="text-align: left;"><i class="fa fa-calendar"></i> Birthdate: {{ userDetails.FormattedBirthdate }}</li>
+                <li style="text-align: left;"><i class="fa fa-phone"></i> Contact: {{ userDetails.Contact }}</li>
+                <li style="text-align: left;"><i class="fa fa-home"></i> Address: {{ userDetails.Address }}</li>
+            </ul>
+            <button (click)="editProfile(userDetails.UserID)" class="me-3">Edit Profile</button>
+            <button (click)="upload(userDetails.UserID)">Upload Profile</button>
+        </div>
+
+        <div class="not-logged-in" *ngIf="!userDetails">
+            <p>You are not logged in.</p> 
+        </div>
+    </div>
+</div>

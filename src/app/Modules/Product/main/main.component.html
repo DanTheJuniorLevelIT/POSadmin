@@ -1,0 +1,39 @@
+<!-- <p>homepage works!</p> -->
+<div class="wrapper">
+    <!-- <h5 [routerLink]="['/main/Product/productpage/newprod']" style="cursor: pointer;">
+      Add Product<i style="padding-left: 5px;" class="fa fa-plus" aria-hidden="true"></i>
+    </h5> -->
+    <div class="table-container">
+      <table class="table" style="text-align: center;">
+        <thead class="sticky-header"> 
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Category</th>
+                <th scope="col">Item</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Price</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (p of product; track p) {
+                <tr>
+                    <th scope="row"><img style="width: 75px; height: 75px;" [src]="p.img"></th>
+                    <td>{{p.Type}}</td>
+                    <td>{{p.Prod_name}}</td>
+                    <td>{{p.Brand}}</td>
+                    <td>{{p.Price}}</td>
+                    <td style="cursor: pointer;"><i class="fa fa-edit fa-lg" aria-hidden="true" (click)="upProd(p)"></i></td>
+                    <!-- <td style="cursor: pointer;"><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteProd(p.Barcode)"></i></td> -->
+                    <td style="cursor: pointer;"><i class="fa fa-upload fa-lg" aria-hidden="true" (click)="upload(p.Barcode, p.Prod_name)"></i></td>
+                </tr>
+            }@empty {
+                <h5>No Records Found</h5>
+            }
+        </tbody>
+    </table>
+  </div>
+    
+</div>

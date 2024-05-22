@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <!-- <div class="profile-card">
+
+        <div class="profile-info">
+            <h2 style="text-align: center;">Update Account Details</h2>
+            <form [formGroup]="adminForm" id="form" class="topBefore" (ngSubmit)="update()">
+                <input type="text" id="lastname" name="lastname" formControlName="id" hidden><br><br>
+                
+                <label for="birthdate">Birthdate:</label><br>
+                <input type="date" id="birthdate" name="birthdate" formControlName="bdate" required><br><br>
+                
+                <label for="contact">Contact:</label><br>
+                <input type="tel" id="contact" name="contact" formControlName="contact" required><br><br>
+                
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address" rows="4" cols="20" style="width: 350px;" formControlName="address" required></textarea><br><br>
+                
+                <label for="password">Old Password:</label><br>
+                <input type="password" id="password" name="password" formControlName="oldpassword"><br><br>
+
+                <label for="password">New Password:</label><br>
+                <input type="password" id="password2" name="password2" formControlName="newpassword"><br><br>
+                
+                <button type="submit">Edit Profile</button>
+            </form>
+        </div>
+    </div> -->
+    <form [formGroup]="adminForm" (ngSubmit)="update()" id="contact">
+        <input type="text" id="lastname" name="lastname" formControlName="id" hidden>
+        <h3>Update Account Details</h3>
+        <h4>Change or Update All you want!</h4>
+        <fieldset>
+          <input placeholder="Birthdate" type="Date" tabindex="1" formControlName="bdate" required autofocus>
+        </fieldset>
+        <!-- <fieldset>
+          <input placeholder="Your Email Address" type="email" tabindex="2" required>
+        </fieldset> -->
+        <fieldset>
+          <input placeholder="Phone Number" type="tel" tabindex="3" formControlName="contact" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Address" type="text" tabindex="4" formControlName="address" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Old Password" type="password" tabindex="4" formControlName="oldpassword">
+        </fieldset>
+        <fieldset>
+          <input placeholder="New Password" type="password" tabindex="4" formControlName="newpassword">
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+      </form>
+</div>

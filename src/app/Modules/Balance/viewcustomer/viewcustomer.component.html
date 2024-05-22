@@ -1,0 +1,76 @@
+<!-- <div class="wrapper">
+    <div class="card">
+      <h2>Customer Details</h2>
+      <div class="info-grid">
+        <ul class="info-col">
+          <li><span>Name:</span> {{worker.Lastname}}, {{worker.Firstname}} {{worker.Middlename}}</li> 
+          <li><span>Birthdate:</span> {{worker.bdate}}</li> 
+          <li><span>Contact:</span> {{worker.Contact}}</li> 
+        </ul>
+        <ul class="info-col">
+          <li><span>Address:</span> {{worker.Address}}</li> 
+          <li><span>Credit:</span> {{worker.Credit}}</li> 
+        </ul>
+      </div> -->
+
+      <!-- <div class="account-info">
+        <h2>Account Details</h2>
+        <ul class="account-details">
+          <li><span>Credit:</span> {{worker.Credit}}</li> 
+          <li><span>Charges:</span> {{worker.Charges}}</li> 
+          <li><span>Balance:</span> {{worker.Balance}}</li> 
+        </ul>
+      </div>
+
+      <div class="transaction-table">
+        <h2 style="text-align: center;">Past Transactions</h2>
+       <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total Charge</th>
+            </tr>
+          </thead>
+          <tbody> 
+            @for (t of transaction; track t) {
+              <tr>
+                <td>{{t.Date}}</td>
+                <td>{{t.Prod_name}}</td>
+                <td>{{t.quantity}}</td>
+                <td>{{t.Price}}</td>
+                <td>{{t.prodtotal}}</td>
+              </tr>
+            }@empty{
+              <h3>No History</h3>
+            }
+          </tbody> 
+        </table>
+       </div>
+      </div> -->
+    <!-- </div>
+  </div> -->
+
+  <div class="wrapper">
+    <div class="profile-card">
+        
+
+        <div class="profile-info">
+            <div class="profile-picture">
+                <img src="assets/default.jpg" alt="Profile Picture"> 
+            </div>
+            <h2>Account Details</h2>
+            <ul>
+                <!-- <li style="text-align: left;"><i class="fa fa-id-card"></i> User ID: {{ userDetails.UserID }}</li> -->
+                <li style="text-align: left;"><i class="fa fa-user"></i> Name: {{worker.Lastname}}, {{worker.Firstname}} {{worker.Middlename}}</li>
+                <li style="text-align: left;"><i class="fa fa-money"></i> Credit: {{worker.Credit}}</li>
+                <li style="text-align: left;"><i class="fa fa-calendar"></i> Birthdate: {{worker.bdate}}</li>
+                <li style="text-align: left;"><i class="fa fa-phone"></i> Contact: {{worker.Contact}}</li>
+                <li style="text-align: left;"><i class="fa fa-home"></i> Address: {{worker.Address}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

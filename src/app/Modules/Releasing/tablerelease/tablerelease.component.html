@@ -1,0 +1,35 @@
+<!-- <p>homepage works!</p> -->
+<div class="wrapper">
+    <input class="text-black" id="search" type="text" placeholder="Search..." [(ngModel)]="keyword">
+    <div class="table-container">
+    <table class="table">
+        <thead class="sticky-header"> 
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Item</th>
+                <th scope="col">Brand</th>
+                <th scope="col" style="text-align: center;">Price</th>
+                <th scope="col"></th>
+                <!-- <th scope="col"></th> -->
+            </tr>
+        </thead>
+        <tbody>
+            @for (p of product | search: keyword; track p) {
+                <tr>
+                    <th scope="row"><img style="width: 75px; height: 75px;" [src]="p.img"></th>
+                    <td>{{p.Prod_name}}</td>
+                    <td>{{p.Brand}}</td>
+                    <td style="text-align: center;">{{p.Price}}</td>
+                    <td style="cursor: pointer;">
+                        <i class="fa fa-share-square-o fa-lg" aria-hidden="true" (click)="release(p)"></i>
+                    </td>
+                    <!-- <td style="cursor: pointer;"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></td> -->
+                </tr>
+            }@empty {
+                <h5>No Records Found</h5>
+            }
+        </tbody>
+    </table>
+    </div>
+    
+</div>

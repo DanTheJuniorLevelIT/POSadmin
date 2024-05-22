@@ -1,0 +1,38 @@
+<!-- <p>homepage works!</p> -->
+<div class="wrapper">
+    <h5 [routerLink]="['/main/Releasing/releasehome/dash']" style="cursor: pointer;">
+        Release Product <i class="fa fa-plus" aria-hidden="true"></i>
+    </h5>
+    <h6>Total Released Items: {{ total }} | {{currentDate}}</h6>
+    <div class="table-container">
+      <table class="table">
+        <thead class="sticky-header">
+            <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Release Date</th>
+                <!-- <th scope="col">Balance</th> -->
+                <!-- <th scope="col">Address</th> -->
+                <th style="text-align: center;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (r of release; track r) {
+                <tr>
+                    <td>{{r.Prod_name}}</td>
+                    <th scope="row">{{r.Quantity}}</th>
+                    <td>{{r.reldate}}</td>
+                    <!-- <td>{{r.Contact}}</td> -->
+                    <!-- <td>{{c.Address}}</td> -->
+                    <!-- <td style="text-align: center;"><i class="fa fa-eye" style="cursor: pointer;" aria-hidden="true"></i></td> -->
+                </tr>
+            }@empty {
+                <td>No Records</td>
+                <th scope="row">No Records</th>
+                <td>No Records</td>
+            }
+        </tbody>
+      </table>
+    </div>
+
+</div>
