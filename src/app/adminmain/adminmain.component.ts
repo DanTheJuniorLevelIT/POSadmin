@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-adminmain',
@@ -21,8 +22,25 @@ export class AdminmainComponent {
 
   logout() {
     localStorage.removeItem('token');
-    alert('Logout Successfully!!');
-    this.route.navigate(['login']);
+    Swal.fire({
+      title: "Are you sure? You want to Logout.",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Logout",
+          text: "Successfully logout",
+          icon: "success"
+        });
+        this.route.navigate(['login']);
+      }
+    });
+    // this.route.navigate(['login']);
   }
 
 }
