@@ -12,7 +12,7 @@ export const remittanceRoute: Routes = [
             {path: 'remithome', component: RemitpageComponent},
             {path: 'addremit', component: AddremitComponent},
             {path: 'editremit', component: EditremitComponent},
-            {path: '', redirectTo: 'remithome', pathMatch: 'full'}
+            {path: '', redirectTo: 'dash', pathMatch: 'full'}
         ]
     },
     {path: '', redirectTo: 'remit', pathMatch: 'full'}

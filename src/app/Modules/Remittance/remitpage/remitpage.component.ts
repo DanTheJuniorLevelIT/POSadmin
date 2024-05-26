@@ -19,10 +19,10 @@ export class RemitpageComponent implements OnInit{
   constructor(private exec: ExecuteService, private http: HttpClient, private route: Router) { }
 
   ngOnInit(): void {
-    this.exec.getremit().subscribe((result: any)=>{
-      this.remit = result;
-      console.log(this.remit);
-    })
+    // this.exec.getremit().subscribe((result: any)=>{
+    //   this.remit = result;
+    //   console.log(this.remit);
+    // })
   }
 
   upProd(us: any){

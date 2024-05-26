@@ -22,7 +22,7 @@
                     <td>{{r.OrNumber}}</td>
                     <td>{{r.Date}}</td>
                     <td>{{r.Amount}}</td>
-                    <td style="cursor: pointer;"><i class="fa fa-edit fa-lg" aria-hidden="true" (click)="editRemit(r.RemittanceID)"></i></td>
+                    <td style="cursor: pointer;"><i class="fa fa-edit fa-lg" aria-hidden="true" (click)="upProd(r)"></i></td>
                 </tr>
             }@empty {
                 <h5>No Records Found</h5>

@@ -1,16 +1,16 @@
-<!-- <div class="wrapper">
+<div class="wrapper">
     <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-8">
             <app-remitpage
-            (newItemEvent)="getRemit($event)"
+            (newItemEvent)="getProd($event)"
             [remit]="remit"
             ></app-remitpage>
         </div>
-        <div class="col-sm-5">
-            <app-addremit
-            [remitedit]="remitdet"
-            (newUpdate)="getRecord($event)"
-            ></app-addremit>
+        <div class="col-sm-4">
+            <app-editremit
+            [remitdet]="remittance"
+            (newUpdateEvent)="getRecord($event)"
+            ></app-editremit>
         </div>
     </div>
-</div> -->
+</div>
