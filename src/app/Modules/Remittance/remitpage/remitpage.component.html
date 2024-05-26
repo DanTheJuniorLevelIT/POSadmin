@@ -10,6 +10,7 @@
     <table class="table">
         <thead class="sticky-header"> 
             <tr>
+                <th scope="col">Remit Image</th>
                 <th scope="col">Official Receipt #</th>
                 <th scope="col">Date</th>
                 <th scope="col">Amount</th>
@@ -19,6 +20,7 @@
         <tbody>
             @for (r of remit; track r) {
                 <tr>
+                    <td><img [src]="r.remIMG" alt="{{r.remIMG}}"></td>
                     <td>{{r.OrNumber}}</td>
                     <td>{{r.Date}}</td>
                     <td>{{r.Amount}}</td>
