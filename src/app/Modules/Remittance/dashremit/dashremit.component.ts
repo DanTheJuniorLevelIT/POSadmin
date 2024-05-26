@@ -15,7 +15,7 @@ import { EditremitComponent } from '../editremit/editremit.component';
 })
 export class DashremitComponent implements OnInit{
   
-  remittance = {RemittanceID: "", OrNumber: "", Date: "", Amount: ""};
+  remittance = {RemittanceID: "", OrNumber: "", Date: "", Amount: "", remitIMG: ""};
   remit: any;
 
   getProd(r: any){
