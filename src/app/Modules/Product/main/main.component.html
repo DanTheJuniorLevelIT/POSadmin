@@ -27,7 +27,7 @@
                     <td>{{p.Price}}</td>
                     <td style="cursor: pointer;"><i class="fa fa-edit fa-lg" aria-hidden="true" (click)="upProd(p)"></i></td>
                     <!-- <td style="cursor: pointer;"><i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteProd(p.Barcode)"></i></td> -->
-                    <td style="cursor: pointer;"><i class="fa fa-upload fa-lg" aria-hidden="true" (click)="upload(p.Barcode, p.Prod_name)"></i></td>
+                    <td style="cursor: pointer;"><i class="fa fa-upload fa-lg" aria-hidden="true" (click)="upload(p.Barcode, p.Prod_name, p.Size)"></i></td>
                 </tr>
             }@empty {
                 <h5>No Records Found</h5>

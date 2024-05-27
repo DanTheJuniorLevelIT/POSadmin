@@ -60,3 +60,6 @@
         top: 0;          /* Stick to the top of the container */ /* Set background color to maintain visibility */
         z-index: 1;       /* Ensure the header is on top of the content */
     }
+    .negative-discrepancy {
+        color: red;
+    }

@@ -15,6 +15,8 @@ export class RemitpageComponent implements OnInit{
   @Input() remit: any
 
   // product: any;
+  // transactionDetails: any;
+  // totalsSales: any;
 
   constructor(private exec: ExecuteService, private http: HttpClient, private route: Router) { }
 

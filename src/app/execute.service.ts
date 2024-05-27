@@ -42,6 +42,10 @@ export class ExecuteService {
     return this.http.get(this.url + 'getremittance.php');
   }
 
+  getremitcash(){
+    return this.http.get(this.url + 'getremitcash.php');
+  }
+
   getremitupdate(rid: any){
     return this.http.get(this.url + `getupdateremittance.php?rid=${rid}`);
   }

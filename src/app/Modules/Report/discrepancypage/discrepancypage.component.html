@@ -19,12 +19,17 @@
                       <tr>
                         <td>{{d.MonthYear}}</td>
                         <td style="text-align: center;">{{d.TransactionCount}}</td>
-                        <td style="text-align: center;">{{d.MonthlySales}}</td>
-                        <td style="text-align: center;">{{d.RemittanceAmount}}</td>
-                        <td style="text-align: center;">{{d.Discrepancy}}</td>
+                        <td style="text-align: center;">₱{{d.MonthlySales}}</td>
+                        <td style="text-align: center;">₱{{d.RemittanceAmount}}</td>
+                        <td style="text-align: center;" style="color: red;">-₱{{ d.Discrepancy }}</td>
+                        <!-- <td [class.negative-discrepancy]="d.Discrepancy < 0">
+                          {{ d.Discrepancy | currencyWithColor:'PHP':'symbol-narrow':'1.2-2' }}
+                        </td> -->
                       </tr>
                     }@empty {
                       <tr>
+                        <td>No Data</td>
+                        <td>No Data</td>
                         <td>No Data</td>
                         <td>No Data</td>
                         <td>No Data</td>

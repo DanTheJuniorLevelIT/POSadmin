@@ -4,7 +4,7 @@
 
       <form [formGroup]="editproductform" id="form" class="topBefore" (ngSubmit)="update()">
             <input style="color: black;" class="text-uppercase" formControlName="code" id="code" name="date" type="text" placeholder="Barcode" hidden>
-            <input style="color: black;" class="text-uppercase" formControlName="code2" id="code" name="date" type="text" placeholder="Barcode">
+            <input style="color: black;" class="text-uppercase" formControlName="code2" id="code" name="date" type="text" placeholder="Barcode" required>
             <select style="color: black;" formControlName="category" id="category" name="type" class="input">
                 <option value="" [selected]="true">Select Type</option>
                 <option value="1">Goods</option>

@@ -14,6 +14,8 @@ export class EditremitComponent implements OnInit{
   @Output() newUpdateEvent = new EventEmitter<any>();
   @Input() remitdet: any;
   rid: any;
+  transactionDetails: any;
+  totalsSales: any;
   // remitdet: any;
 
   remitForm = new FormGroup({
@@ -35,7 +37,46 @@ export class EditremitComponent implements OnInit{
     //   this.remitForm.controls['date'].setValue(this.remitdet.Date);
     //   this.remitForm.controls['amount'].setValue(this.remitdet.Amount);
     // });
+    // this.getdailyTransactionDetails();
+    this.exec.getremitcash().subscribe(
+      (response: any) => {
+        console.log('Response:', response); // Log the response
+        if (response.transactionDetails) {
+          // Parse and store transaction details
+          this.transactionDetails = response.transactionDetails;
+          // Calculate total sales
+          this.totalsSales = response.totalSales;
+          this.remitForm.controls['amount'].setValue(response.totalSales);
+        } else {
+          console.error('Error: No transaction details found'); // Log the error
+        }
+      },
+      (error) => {
+        console.error('Error fetching daily transaction details:', error); // Log the error
+      }
+    );
   }
+
+  getdailyTransactionDetails() {
+    const transactionId = 1;
+    this.exec.getremitcash().subscribe(
+      (response: any) => {
+        console.log('Response:', response); // Log the response
+        if (response.transactionDetails) {
+          // Parse and store transaction details
+          this.transactionDetails = response.transactionDetails;
+          // Calculate total sales
+          this.totalsSales = response.totalSales;
+        } else {
+          console.error('Error: No transaction details found'); // Log the error
+        }
+      },
+      (error) => {
+        console.error('Error fetching daily transaction details:', error); // Log the error
+      }
+    );
+  }
+
 
   ngOnChanges(changes: any){
     console.log(changes);

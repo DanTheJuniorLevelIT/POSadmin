@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ExecuteService } from '../../../execute.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-editproduct',
@@ -19,7 +20,7 @@ export class EditproductComponent implements OnInit{
 
   editproductform = new FormGroup({
     code: new FormControl(null),
-    code2: new FormControl(null),
+    code2: new FormControl(null, Validators.required),
     category: new FormControl(null),
     prodname: new FormControl(null),
     brand: new FormControl(null),
@@ -61,13 +62,57 @@ export class EditproductComponent implements OnInit{
 
   update(){
     console.log(this.editproductform.value);
-    this.exec.updateProduct(this.editproductform.value)
-      .subscribe((result:any)=>{
-        this.newUpdateEvent.emit(result);
-        this.editproductform.reset();
-        console.log(result)
-      })
+    if(this.editproductform.valid){
+      // this.exec.updateProduct(this.editproductform.value)
+      //   .subscribe((result:any)=>{
+      //     // this.newUpdateEvent.emit(result);
+      //     // this.editproductform.reset();
+      //     // console.log(result)
+      //     if(result){
+      //       this.newUpdateEvent.emit(result);
+      //       this.editproductform.reset();
+      //     }else if(result == "Error"){
+      //       Swal.fire({
+      //         icon: "error",
+      //         title: "Oops...",
+      //         text: "Barcode Already Exist",
+      //       });
+      //     }
+      //   })
+      this.exec.updateProduct(this.editproductform.value)
+    .subscribe({
+      next: (result: any) => {
+        if (result === "Error: Barcode already exists!") { // Specific error
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Barcode Already Exist",
+          });
+        } else {
+            this.newUpdateEvent.emit(result);
+            this.editproductform.reset();
+        }
+      }
+    });
+    }else{
+      Swal.fire({
+          icon: "error",
+          title: "Barcode is Empty",
+          text: "Please Enter Designated Barcode to the product",
+      });
+    }
   }
+
+  // if(result){
+  //   this.newUpdateEvent.emit(result);
+  //   this.editproductform.reset();
+  // }else if(result == "Error"){
+  //   Swal.fire({
+  //     icon: "error",
+  //     title: "Oops...",
+  //     text: "Barcode Already Exist",
+  //   });
+  // }
 
   clear(){
     this.editproductform.reset();

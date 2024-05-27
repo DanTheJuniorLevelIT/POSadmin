@@ -29,12 +29,17 @@ export class UploadComponent implements OnInit{
   barc: any;
   bid: any;
   prodname: any;
+  prodbrand: any;
+  prodsize: any;
   images: any;
   prodnum: any;
+  prodDet: any;
 
+  
   ngOnInit(): void {
     this.bid = localStorage.getItem("code");
     this.prodname = localStorage.getItem("name");
+    this.prodsize = localStorage.getItem("size");
   }
 
   onFileSelected(event: any){

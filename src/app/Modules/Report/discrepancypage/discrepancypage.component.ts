@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExecuteService } from '../../../execute.service';
+// import { CurrencyWithColorPipe } from '../../../currency-with-color.pipe'; CurrencyWithColorPipe
+// import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-discrepancypage',
@@ -11,7 +13,7 @@ import { ExecuteService } from '../../../execute.service';
 export class DiscrepancypageComponent implements OnInit{
 
   desc: any;
-
+  disc: any;
   constructor(private exec: ExecuteService){}
 
   ngOnInit(): void {

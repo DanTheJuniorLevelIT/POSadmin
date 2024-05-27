@@ -28,9 +28,10 @@ export class MainComponent implements OnInit{
     // console.log(us);
   }
 
-  upload(bid: any, pname: any){
+  upload(bid: any, pname: any, psize: any){
     localStorage.setItem("code", bid);
     localStorage.setItem("name", pname);
+    localStorage.setItem("size", psize);
     this.route.navigate(["/main/Product/productpage/upIMG"]);
   }
 
