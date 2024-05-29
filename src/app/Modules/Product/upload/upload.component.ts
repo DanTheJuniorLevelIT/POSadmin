@@ -34,6 +34,7 @@ export class UploadComponent implements OnInit{
   images: any;
   prodnum: any;
   prodDet: any;
+  record: any;
 
   
   ngOnInit(): void {
@@ -62,6 +63,10 @@ export class UploadComponent implements OnInit{
       this.http.post('http://localhost/nlahPOS/saveimage.php', fd, {observe: 'events', reportProgress: true}).subscribe((event: any)=>{
         console.log(event);
         if(event){
+          this.exec.getproduct().subscribe((result: any)=>{
+            this.record = result;
+            console.log(this.record);
+          })
           this.route.navigate(['/main/Product/productpage/dash']);
         }
       })

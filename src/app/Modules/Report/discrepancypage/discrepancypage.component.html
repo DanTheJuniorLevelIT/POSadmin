@@ -18,13 +18,17 @@
                     @for(d of desc; track d){
                       <tr>
                         <td>{{d.MonthYear}}</td>
-                        <td style="text-align: center;">{{d.TransactionCount}}</td>
-                        <td style="text-align: center;">₱{{d.MonthlySales}}</td>
-                        <td style="text-align: center;">₱{{d.RemittanceAmount}}</td>
-                        <td style="text-align: center;" style="color: red;">-₱{{ d.Discrepancy }}</td>
-                        <!-- <td [class.negative-discrepancy]="d.Discrepancy < 0">
-                          {{ d.Discrepancy | currencyWithColor:'PHP':'symbol-narrow':'1.2-2' }}
-                        </td> -->
+                        <td style="text-align: center;">{{d.TransactionCount }}</td>
+                        <td style="text-align: center;">{{d.MonthlySales | currency: ' ' }}</td>
+                        <td style="text-align: center;">{{d.RemittanceAmount | currency: 'PHP':'symbol':'1.2-2' }}</td>
+                        <!-- <td style="text-align: center;">{{ d.Discrepancy | currency: 'PHP':'symbol':'1.2-2' }}</td> -->
+                        <td style="text-align: center;">
+                          @if (d.Discrepancy < 0) {
+                            <span style="color: green;">+{{ d.Discrepancy | currency: 'PHP' }}</span>
+                          } @else {
+                            <span style="color: red;">-{{ d.Discrepancy | currency: 'PHP' }}</span>
+                          }
+                        </td>
                       </tr>
                     }@empty {
                       <tr>

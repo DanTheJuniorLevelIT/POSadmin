@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ExecuteService } from '../../../execute.service';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 // import { CurrencyWithColorPipe } from '../../../currency-with-color.pipe'; CurrencyWithColorPipe
 // import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-discrepancypage',
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe, CommonModule],
   templateUrl: './discrepancypage.component.html',
   styleUrl: './discrepancypage.component.css'
 })
